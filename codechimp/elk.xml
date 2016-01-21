@@ -13,7 +13,7 @@
   </Overview>
   <Support></Support>
   <Registry>https://registry.hub.docker.com/u/codechimporg/unraid-dockers-elk/</Registry>
-  <Repository>codechimporg/elk</Repository>
+  <Repository>codechimporg/unraid-dockers-elk</Repository>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
   <Networking>
