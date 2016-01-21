@@ -35,6 +35,11 @@
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
+        <HostPort>514</HostPort>
+        <ContainerPort>514</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>      
+      <Port>
         <HostPort>5601</HostPort>
         <ContainerPort>5601</ContainerPort>
         <Protocol>tcp</Protocol>
