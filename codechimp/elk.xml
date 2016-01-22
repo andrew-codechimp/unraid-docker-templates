@@ -60,5 +60,5 @@
     </Volume>
   </Data>
   <WebUI>http://[IP]:[PORT:5601]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/elk-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/elastic-icon.png</Icon>
 </Containers>
