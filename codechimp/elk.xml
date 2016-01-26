@@ -9,7 +9,7 @@
   [b]/config[/b] This is where the ELK applications will store their configuration files, database and logs.
   </Description>
   <Overview>
-	Elastic provides a growing platform of open source projects and commercial products designed to search, analyze, and visualize your data, allowing you to get actionable insight in real time.
+	Elastic provides products designed to search, analyze, and visualize your data, allowing you to get actionable insight in real time.
   </Overview>
   <Support></Support>
   <Registry>https://registry.hub.docker.com/u/codechimporg/unraid-dockers-elk/</Registry>
