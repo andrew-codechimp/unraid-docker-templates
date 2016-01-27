@@ -2,7 +2,7 @@
 <Containers>
 <Beta>False</Beta>
 <Category>Productivity: Tools:</Category>
-  <Name>codechimp-jenkins</Name>
+  <Name>Jenkins</Name>
   <Description>
 	Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle. Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat.[br][br]
     [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
@@ -12,9 +12,8 @@
 	Jenkins is an open source continuous integration tool written in Java. The project was forked from Hudson after a dispute with Oracle. Jenkins provides continuous integration services for software development. It is a server-based system running in a servlet container such as Apache Tomcat.
   </Overview>
   <Support></Support>
-  <Registry>https://registry.hub.docker.com/u/codechimporg/arch-jenkins/</Registry>
-  <GitHub>https://github.com/codechimp-org/arch-jenkins</GitHub>
-  <Repository>codechimporg/arch-jenkins</Repository>
+  <Registry>https://registry.hub.docker.com/u/codechimporg/unraid-dockers-jenkins/</Registry>
+  <Repository>codechimporg/unraid-dockers-jenkins</Repository>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
   <Networking>
@@ -46,5 +45,5 @@
     </Volume>
   </Data>
   <WebUI>http://[IP]:[PORT:8090]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/codechimp-org/docker-templates/master/codechimp/images/jenkins-icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/jenkins-icon.png</Icon>
 </Containers>
