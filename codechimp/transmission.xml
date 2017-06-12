@@ -1,0 +1,95 @@
+docker run --cap-add=NET_ADMIN --device=/dev/net/tun -d \
+              -v /your/storage/path/:/data \
+              -v /etc/localtime:/etc/localtime:ro \
+              -e "OPENVPN_PROVIDER=PIA" \
+              -e "OPENVPN_CONFIG=Netherlands" \
+              -e "OPENVPN_USERNAME=user" \
+              -e "OPENVPN_PASSWORD=pass" \
+              -p 9091:9091 \
+              haugene/transmission-openvpn
+
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Beta>False</Beta>
+  <Category>Downloaders:</Category>
+  <Date>2017-06-12</Date>
+  <Name>Transmission OpenVPN</Name>
+
+  <Description>Docker container which runs Transmission torrent client with WebUI while connecting to OpenVPN.[br]
+  [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+  [b]/config[/b] : Storing all transmission config files [br]
+  [b]/data[/b] : Point to data location[br]
+  </Description>
+  <Project>http://www.transmissionbt.com/</Project>
+  <Overview>Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.</Overview>
+
+  <Registry>https://hub.docker.com/r/haugene/transmission-openvpn</Registry>
+  <Repository>haugene/docker-transmission-openvpn</Repository>
+
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+    <Variable>
+      <Name>OPENVPN_PROVIDER</Name>
+      <Value>PIA</Value>
+    </Variable>
+    <Variable>
+      <Name>OPENVPN_CONFIG</Name>
+      <Value>Netherlands</Value>
+    </Variable>
+    <Variable>
+      <Name>OPENVPN_USERNAME</Name>
+      <Value>username</Value>
+    </Variable>
+    <Variable>
+      <Name>OPENVPN_PASSWORD</Name>
+      <Value>password</Value>
+    </Variable>
+    <Variable>
+      <Name>LOCAL_NETWORK</Name>
+      <Value>192.168.0.0/24</Value>
+    </Variable>
+<!--     <Variable>
+      <Name>OPENVPN_OPTS</Name>
+      <Value>--inactive 3600 --ping 10 --ping-exit 60</Value>
+    </Variable> -->
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9091</HostPort>
+        <ContainerPort>9091</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+     <Port>
+        <HostPort>51413</HostPort>
+        <ContainerPort>51413</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+</Publish>
+ </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/appdata/transmissionvpn</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/transmissionvpn</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+<WebUI>http://[IP]:[PORT:9091]/</WebUI>
+  <Banner></Banner>
+  <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/transmission.png</Icon>
+</Container>
