@@ -47,10 +47,10 @@
       <Name>LOCAL_NETWORK</Name>
       <Value>192.168.0.0/24</Value>
     </Variable>
-<!--     <Variable>
+    <Variable>
       <Name>OPENVPN_OPTS</Name>
       <Value>--inactive 3600 --ping 10 --ping-exit 60</Value>
-    </Variable> -->
+    </Variable>
   </Environment>
   <Networking>
     <Mode>bridge</Mode>
