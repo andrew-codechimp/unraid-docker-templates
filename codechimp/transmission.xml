@@ -2,13 +2,13 @@
 <Container>
   <Beta>False</Beta>
   <Category>Downloaders:</Category>
-  <Date>2017-06-12</Date>
+  <Date>2017-07-21</Date>
   <Name>Transmission OpenVPN</Name>
 
   <Description>Docker container which runs Transmission torrent client with WebUI while connecting to OpenVPN.[br]
-  [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-  [b]/config[/b] : Storing all transmission config files [br]
-  [b]/data[/b] : Point to data location[br]
+    [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]/config[/b] : Storing all transmission config files [br]
+    [b]/data[/b] : Point to data location[br]
   </Description>
   <Project>http://www.transmissionbt.com/</Project>
   <Overview>Transmission is designed for easy, powerful use. Transmission has the features you want from a BitTorrent client: encryption, a web interface, peer exchange, magnet links, DHT, µTP, UPnP and NAT-PMP port forwarding, webseed support, watch directories, tracker editing, global and per-torrent speed limits, and more.</Overview>
@@ -17,7 +17,7 @@
   <Repository>haugene/transmission-openvpn</Repository>
 
   <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
+  <Privileged>true</Privileged>
   <Environment>
     <Variable>
       <Name>PUID</Name>
@@ -51,6 +51,38 @@
       <Name>OPENVPN_OPTS</Name>
       <Value>--inactive 3600 --ping 10 --ping-exit 60</Value>
     </Variable>
+
+    <Variable>
+      <Name>TRANSMISSION_UMASK</Name>
+      <Value>2</Value>
+    </Variable>
+
+    <Variable>
+      <Name>TRANSMISSION_RPC_AUTHENTICATION_REQUIRED</Name>
+      <Value>true</Value>
+    </Variable>
+
+    <Variable>
+      <Name>TRANSMISSION_RPC_USERNAME</Name>
+      <Value>admin</Value>
+    </Variable>
+
+    <Variable>
+      <Name>TRANSMISSION_RPC_PASSWORD</Name>
+      <Value>password</Value>
+    </Variable>
+
+    <Variable>
+      <Name>TRANSMISSION_BLOCKLIST_URL</Name>
+      <Value>http://john.bitsurge.net/public/biglist.p2p.gz</Value>
+    </Variable>
+
+    <Variable>
+      <Name>TRANSMISSION_DOWNLOAD_DIR</Name>
+      <Value>/data/complete</Value>
+    </Variable>
+
+
   </Environment>
   <Networking>
     <Mode>bridge</Mode>
@@ -60,13 +92,13 @@
         <ContainerPort>9091</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-     <Port>
+      <Port>
         <HostPort>51413</HostPort>
         <ContainerPort>51413</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-</Publish>
- </Networking>
+    </Publish>
+  </Networking>
   <Data>
     <Volume>
       <HostDir>/appdata/transmissionvpn</HostDir>
@@ -79,7 +111,8 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-<WebUI>http://[IP]:[PORT:9091]/</WebUI>
+  <WebUI>http://[IP]:[PORT:9091]/</WebUI>
   <Banner></Banner>
   <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/transmission.png</Icon>
+  <ExtraParams>--restart=always</ExtraParams>
 </Container>
