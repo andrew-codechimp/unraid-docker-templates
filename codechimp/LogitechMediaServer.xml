@@ -2,8 +2,8 @@
 <Container version="2">
   <Name>LogitechMediaServer</Name>
   <Date>2017-05-19</Date>
-  <Repository>codechimp-org/logitechmediaserver</Repository>
-  <Registry>https://registry.hub.docker.com/u/codechimp-org/logitechmediaserver/</Registry>
+  <Repository>codechimporg/logitechmediaserver</Repository>
+  <Registry>https://registry.hub.docker.com/u/codechimporg/logitechmediaserver/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Overview>
@@ -14,7 +14,7 @@
   </Overview>
   <Category>MediaServer:Music</Category>
   <WebUI>http://[IP]:[PORT:9000]/</WebUI>
-  <TemplateURL>https://github.com/dlandon/docker.templates</TemplateURL>
+  <TemplateURL>https://github.com/codechimp-org/unraid-docker-templates</TemplateURL>
   <Icon>https://raw.githubusercontent.com/codechimp-org/unraid-docker-templates/master/codechimp/images/logitechmediaserver.png</Icon>
   <ExtraParams>--log-opt max-size=50m --log-opt max-file=1</ExtraParams>
   <Description>
