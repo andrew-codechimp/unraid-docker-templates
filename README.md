@@ -1,6 +1,7 @@
 Description
 ===========
 unRAID Docker Templates repository for Docker images in the "codechimp-org" repository.
+These are for my own use/education and are unsupported.
 
 Installation
 ============
