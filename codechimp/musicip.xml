@@ -2,7 +2,7 @@
 <Container version="2">
   <Name>MusicIP</Name>
   <Date>2018-08-22</Date>
-  <Repository>justifiably/docker-musicip</Repository>
+  <Repository>justifiably/musicip</Repository>
   <Registry>https://registry.hub.docker.com/u/justifiably/musicip/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
