@@ -3,7 +3,7 @@
   <Name>MusicIP</Name>
   <Date>2018-08-22</Date>
   <Repository>justifiably/docker-musicip</Repository>
-  <Registry>https://hub.docker.com/r/justifiably/musicip/</Registry>
+  <Registry>https://registry.hub.docker.com/u/justifiably/musicip/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Overview>
@@ -21,7 +21,8 @@
     MusicIP Headless Server for use with Logitech Media Server[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br][br]
     [b]/config[/b] : this path is used to store the configuration and data of MusicIP[br][br]
-    [b]/music[/b] : set this path to where you store your music files.
+    [b]/music-lossy[/b] : set this path to where you store your music files.
+    [b]/music-lossless[/b] : set this path to where you store your music files.
   </Description>
   <Networking>
     <Mode>bridge</Mode>
@@ -39,11 +40,16 @@
       <ContainerDir>/home/musicip</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    <Volume type="music">
-      <HostDir>/mnt/user/appdata/musicip</HostDir>
-      <ContainerDir>/srv/music</ContainerDir>
+    <Volume type="music-lossy">
+      <HostDir>/mnt/user/music/lossy</HostDir>
+      <ContainerDir>/srv/music/lossy</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
+    <Volume type="music-lossless">
+      <HostDir>/mnt/user/music/lossless</HostDir>
+      <ContainerDir>/srv/music/lossless</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>    
   </Data>
   <Environment>
     <Variable>
@@ -59,7 +65,8 @@
   </Environment>
   <BaseImage>debian:jessie</BaseImage>
   <Config Name="WebUI Port" Target="10002" Default="10002" Mode="tcp" Description="Container Port: 10002" Type="Port" Display="always" Required="true" Mask="false">10002</Config>
-  <Config Name="Music Path" Target="/music" Default="" Mode="ro" Description="Container Path: /srv/music" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Lossy Music Path" Target="/music-lossy" Default="" Mode="ro" Description="Container Path: /srv/music-lossy" Type="Path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Lossless Music Path" Target="/music-lossless" Default="" Mode="ro" Description="Container Path: /srv/music-lossless" Type="Path" Display="always" Required="true" Mask="false"></Config>  
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/musicip" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/musicip</Config>
