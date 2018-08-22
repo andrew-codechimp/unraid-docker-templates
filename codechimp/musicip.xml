@@ -3,7 +3,7 @@
   <Name>MusicIP</Name>
   <Date>2018-08-22</Date>
   <Repository>justifiably/docker-musicip</Repository>
-  <Registry>https://registry.hub.docker.com/u/justifiably/musicip/</Registry>
+  <Registry>https://hub.docker.com/r/justifiably/musicip/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Overview>
