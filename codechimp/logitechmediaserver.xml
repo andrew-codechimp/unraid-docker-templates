@@ -10,6 +10,7 @@
     Logitech Media Server (formerly SlimServer, SqueezeCenter and Squeezebox Server) is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br][br]
     [b]/config[/b] : this path is used to store the configuration and the database files of Logitech Media Server.[br][br]
+    [b]/plugins[/b] : this path is used for manually installed plugins.[br][br]
     [b]/music[/b] : set this path to where you store your music files.
   </Overview>
   <Category>MediaServer:Music</Category>
@@ -21,6 +22,7 @@
     Logitech Media Server (formerly SlimServer, SqueezeCenter and Squeezebox Server) is a streaming audio server supported by Logitech (formerly Slim Devices), developed in particular to support their Squeezebox range of digital audio receivers.[br][br]
     [b][span style='color: #E80000;']Directions:[/span][/b][br][br]
     [b]/config[/b] : this path is used to store the configuration and the database files of Logitech Media Server.[br][br]
+    [b]/plugins[/b] : this path is used for manually installed plugins.[br][br]
     [b]/music[/b] : set this path to where you store your music files.
   </Description>
   <Networking>
@@ -54,9 +56,14 @@
       <ContainerDir>/music</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-    <Volume type="appdata">
-      <HostDir>/mnt/user/appdata/LogitechMediaServer</HostDir>
+    <Volume type="config">
+      <HostDir>/mnt/user/appdata/LogitechMediaServer/config</HostDir>
       <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume type="plugins">
+      <HostDir>/mnt/user/appdata/LogitechMediaServer/plugins</HostDir>
+      <ContainerDir>/plugins</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
@@ -80,5 +87,6 @@
   <Config Name="Music Path" Target="/music" Default="" Mode="rw" Description="Container Path: /music" Type="Path" Display="always" Required="true" Mask="false"></Config>
   <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/LogitechMediaServer" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/LogitechMediaServer</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/LogitechMediaServer/config" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/LogitechMediaServer/config</Config>
+  <Config Name="Plugins Path" Target="/plugins" Default="/mnt/user/appdata/LogitechMediaServer/plugins" Mode="rw" Description="Container Path: /plugins" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/LogitechMediaServer/plugins</Config>
 </Container>
