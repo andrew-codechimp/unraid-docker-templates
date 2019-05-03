@@ -2,8 +2,8 @@
 <Container version="2">
   <Name>LogitechMediaServer</Name>
   <Date>2017-05-19</Date>
-  <Repository>codechimporg/unraid-dockers-logitechmediaserver</Repository>
-  <Registry>https://registry.hub.docker.com/u/codechimporg/unraid-dockers-logitechmediaserver/</Registry>
+  <Repository>codechimporg/logitechmediaserver</Repository>
+  <Registry>https://registry.hub.docker.com/u/codechimporg/logitechmediaserver/</Registry>
   <Network>bridge</Network>
   <Privileged>false</Privileged>
   <Overview>
